@@ -4,7 +4,7 @@
 def register_sale():
     name_ok = False
     while name_ok == False:
-        name = input("Product name: ")
+        name = input("Product name: ").strip().lower()
         try:
             float(name)
             print("Write only letters")
