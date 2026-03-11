@@ -2,13 +2,29 @@
 # Ask the user for sale data
 
 def register_sale():
-    name = input("Product name: ")
+    name_ok = False
+    while name_ok == False:
+        name = input("Product name: ")
+        try:
+            float(name)
+            print("Write only letters")
+            name_ok = False
+        except:
+            if name == "":
+                print("Write only letters")
+                name_ok = False
+            else:
+                name_ok = True
 
     price_ok = False
     while price_ok == False:
         try:
             price = float(input("Product price: "))
-            price_ok = True
+            if price < 0:
+                print("Price cannot be negative")
+                price_ok = False
+            else:
+                price_ok = True
         except:
             print("Write a number")
 
@@ -16,7 +32,11 @@ def register_sale():
     while quantity_ok == False:
         try:
             quantity = int(input("Quantity: "))
-            quantity_ok = True
+            if quantity < 0:
+                print("Quantity cannot be negative")
+                quantity_ok = False
+            else:
+                quantity_ok = True
         except:
             print("Write a whole number")
 
