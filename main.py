@@ -1,21 +1,21 @@
-from inicializar import inicializar_variables
-from registrar_venta import registrar_venta
-from guardar_venta import guardar_venta
-from otra_venta import preguntar_otra_venta
-from mostrar_resumen import mostrar_resumen
+from initialize import initialize_sales_list
+from register_sale import register_sale
+from save_sale import save_sale
+from another_sale import ask_another_sale
+from show_summary import show_summary
 
 
 def main():
-    lista_ventas = inicializar_variables()
-    total_general = 0
+    sales_list = initialize_sales_list()
+    total_amount = 0
 
-    si = True
-    while si:
-        venta = registrar_venta()
-        total_general = guardar_venta(lista_ventas, venta, total_general)
-        si = preguntar_otra_venta()
+    yes = True
+    while yes:
+        sale = register_sale()
+        total_amount = save_sale(sales_list, sale, total_amount)
+        yes = ask_another_sale()
 
-    mostrar_resumen(lista_ventas, total_general)
+    show_summary(sales_list, total_amount)
 
 
 main()
