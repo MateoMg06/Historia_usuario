@@ -5,7 +5,7 @@ from another_sale import ask_another_sale
 from show_summary import show_summary
 
 
-def main():
+def main(): 
     sales_list = initialize_sales_list()
     total_amount = 0
 
