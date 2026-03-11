@@ -1,4 +1,6 @@
 
+# Show summary with total quantity per product
+
 def show_summary(sales_list, total_amount):
     print("SUMMARY")
 
@@ -6,13 +8,19 @@ def show_summary(sales_list, total_amount):
         print("No sales")
         print("Total", 0)
     else:
-        number = 1
+        product_totals = {}
+
         for sale in sales_list:
-            print("Sale", number)
-            print("Product", sale["name"])
-            print("Price", sale["price"])
-            print("Quantity", sale["quantity"])
-            print("Subtotal", sale["subtotal"])
-            number = number + 1
+            name = sale["name"]
+            quantity = sale["quantity"]
+
+            if name in product_totals:
+                product_totals[name] = product_totals[name] + quantity
+            else:
+                product_totals[name] = quantity
+
+        for name in product_totals:
+            print("Product", name)
+            print("Total quantity", product_totals[name])
 
         print("Total", total_amount)

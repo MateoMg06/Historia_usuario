@@ -1,8 +1,25 @@
 
+# Ask the user for sale data
+
 def register_sale():
     name = input("Product name: ")
-    price = float(input("Product price: "))
-    quantity = int(input("Quantity: "))
+
+    price_ok = False
+    while price_ok == False:
+        try:
+            price = float(input("Product price: "))
+            price_ok = True
+        except:
+            print("Write a number")
+
+    quantity_ok = False
+    while quantity_ok == False:
+        try:
+            quantity = int(input("Quantity: "))
+            quantity_ok = True
+        except:
+            print("Write a whole number")
+
     subtotal = price * quantity
 
     sale = {

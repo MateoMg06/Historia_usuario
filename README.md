@@ -13,6 +13,9 @@ This project implements the flowchart for registering sales. Each step of the fl
 ## Strategy Used
 I followed the flowchart step by step and turned each step into a small function. The main file only calls those functions in the same order as the diagram, so the code is easy to read and matches the process exactly.
 
+## Modules Used
+The program imports its own modules: initialize, register_sale, save_sale, another_sale, show_summary.
+
 ## Run
 Open a terminal in this folder and run:
 
